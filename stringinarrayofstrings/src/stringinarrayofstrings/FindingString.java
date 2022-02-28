@@ -1,4 +1,4 @@
-package StringInSetOfStrings;
+package stringinarrayofstrings;
 import java.util.ArrayList;
 import java.util.Iterator;
 public class FindingString {
@@ -24,5 +24,4 @@ public class FindingString {
 			}
 		}
 	}
-
 }
