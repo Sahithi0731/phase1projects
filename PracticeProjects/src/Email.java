@@ -1,33 +1,26 @@
-import java.util.*;
-import java.util.regex.*;
-public class Email {
-	public static void main(String[] args) {
-		List<String>emails = new ArrayList<String>();
-		
-		//valid email address
-		emails.add("sahithi@example.com");
-		emails.add("sahithi.sahi2example.com");
-		emails.add("sahithi@example.me.org");
-		
-		//invalid email address
-		emails.add("sahi.example.com");
-		emails.add("sahithi..sahi@example.com");
-		emails.add("sahithi@.example.com");
-		
-		for(String value : emails) {
-			System.out.println("The Email address" + value + "is" +(isValidEmail(value)?"valid":"invalid"));
-		}
-		System.out.println("Enter any email address to check");
-		Scanner sc = new Scanner(System.in);
-		String input = sc.nextLine();
-		System.out.println("The Email address" + input + "is" + (isValidEmail(input)?"valid":"invalid"));
-	}
-	public static boolean isValidEmail(String email) {
-		String regex = "^(.+)@(.+)$";
-		//initialize the Pattern object
-		Pattern pattern = Pattern.compile(regex);
-		Matcher matcher = pattern.matcher(email);
-		return matcher.matches();
-		
-	}
-}
+import java.util.regex.*;    
+import java.util.*;    
+public class Email{  
+    public static void main(String args[]){  
+        ArrayList<String> emails = new ArrayList<String>();  
+        emails.add("sahithi@domain.co.in");  
+        emails.add("sahithi@domain.com");  
+        emails.add("sahithi.name@domain.com");  
+        emails.add("sahithi#@domain.co.in");  
+        emails.add("sahithi@domain.com");  
+        emails.add("sahithi@domaincom");  
+        //Add invalid emails in list  
+        emails.add("@yahoo.com");  
+        emails.add("sahithi#.com");  
+        //Regular Expression   
+        String regex = "^(.+)@(.+)$";  
+        //Compile regular expression to get the pattern  
+        Pattern pattern = Pattern.compile(regex);  
+        //Iterate emails array list  
+        for(String email : emails){  
+            //Create instance of matcher   
+            Matcher matcher = pattern.matcher(email);  
+            System.out.println(email +" : "+ matcher.matches()+"\n");  
+        }  
+    }  
+}  
